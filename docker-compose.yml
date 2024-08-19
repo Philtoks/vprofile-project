@@ -10,6 +10,7 @@ services:
     volumes:
       - vprodbdata:/var/lib/mysql
     environment:
+      MYSQL_ROOT_PASSWORD=admin123
       
   vprocache01:
     image: memcahed
@@ -45,5 +46,5 @@ services:
 volumes:
   vprodbdata: {}
   vproappdata: {}
-     
+
   
