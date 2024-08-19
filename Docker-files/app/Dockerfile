@@ -2,9 +2,8 @@ FROM openjdk:11 AS maven
 RUN apt update 
 RUN apt install maven -y
 RUN git clone -b main https://github.com/devopshydclub/vprofile-project.git
-RUN cd vprofile-project
-RUN git checkout docker
-RUN mvn install
+RUN cd vprofile-project && git checkout docker && mvn install
+
 
 FROM tomcat:9-jre11
 WORKDIR /usr/local/tomcat/webapps/
