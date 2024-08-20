@@ -9,7 +9,7 @@ services:
     volumes:
       - vprodbdata:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=admin123
+      - MYSQL_ROOT_PASSWORD=vprodbpass
       
   vprocache01:
     image: memcached
@@ -32,7 +32,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - vprodbdata:/usr/local/tomcat/webapps
+      - vproappdata:/usr/local/tomcat/webapps
     
   vproweb:
     build: 
